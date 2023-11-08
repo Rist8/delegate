@@ -12,8 +12,7 @@ void Pointless(int i, char c, double d, float f,
 
 int main() {
 	Delegate deleg;
-	Method<std::string> func([](std::string s) { std::cout << s; },
-		std::string("Hello world!\n"));
+	Method<std::string> func([](std::string s) { std::cout << s; }, std::string("Hello world!\n"));
 	deleg += func;
 	deleg += Method<>([]() { std::cout << "Hi"; });
 	deleg.Invoke();
